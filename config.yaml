@@ -6,7 +6,7 @@ years : [2020, 2025, 2030, 2035, 2040, 2045, 2050]
 expectation : "" # tech data uncertainty, possible options [None, "optimist", "pessimist"]
 
 #year for EUR outputs
-eur_year : 2020
+eur_year : 2023
 
 # add solar from different source
 solar_utility_from_vartiaien : false
