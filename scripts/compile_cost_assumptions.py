@@ -2145,6 +2145,39 @@ def add_energy_storage_database(costs, data_year):
     return pd.concat([costs, df]), tech
 
 
+def add_imports(data):
+    df = pd.read_csv(snakemake.input.imports, sep=";", quotechar='"', index_col=list(range(8)))
+    # Select the import cost per unit of energy delivered
+    df = df.xs("general", level="category").xs("homogeneous", level="wacc").xs("default", level="scenario").xs("Cost per MWh delivered", level="subcategory").reset_index("importer", drop=True)
+    # Drop all rows having index level exporter as "DK" and "ES"
+    df = df.drop(index=["DK", "ES"], level="exporter")
+    # For each combination of "year" and "esc" (index levels), take minimum value over "exporter" index level
+    df = df.groupby(["year", "esc"]).min()
+    # In order to add remaining years, unstack "esc" to get an index of only years
+    df = df.unstack("esc")
+    df.loc[2020] = df.loc[2030]
+    # Add years 2025, 2035, 2045 and interpolate values linearly
+    for y in [2025, 2035, 2045]:
+        df.loc[y] = np.nan
+    df.sort_index(inplace=True)
+    df = df.interpolate(method="index")
+    # Transpose to make years columns
+    df = df.T.reset_index(level=0, drop=True)
+    # Rename index to "technology"
+    df.index.name = "technology"
+    # Add "parameter" column, the make it second index level
+    df["parameter"] = "fuel"
+    df = df.set_index("parameter", append=True)
+    # Add remaining columns
+    df["unit"] = "EUR/MWh"
+    df["source"] = "https://doi.org/10.1371/journal.pone.0281380"
+    df["further description"] = "Cost per MWh delivered"
+    df["currency_year"] = 2015
+    df.columns.name = None
+    # Add to data
+    return pd.concat([data, df])
+
+
 def prepare_inflation_rate(fn):
     """read in annual inflation rate from Eurostat
     https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/dataflow/ESTAT/prc_hicp_aind/1.0?references=descendants&detail=referencepartial&format=sdmx_2.1_generic&compressed=true
@@ -2263,6 +2296,10 @@ if __name__ == "__main__":
     data = add_SMR_data(data)
     # add solar rooftop costs by taking the mean of commercial and residential
     data = add_mean_solar_rooftop(data)
+
+    # Add import costs
+    data = add_imports(data)
+
     # %% (3) ------ add additional sources and save cost as csv ------------------
     # [RTD-target-multiindex-df]
     for year in years:

@@ -750,6 +750,7 @@ home battery inverter,investment,236.0519,EUR/kW,"Global Energy System based on 
 home battery inverter,lifetime,10.0,years,"Global Energy System based on 100% Renewable Energy, Energywatchgroup/LTU University, 2019, Danish Energy Agency, technology_data_catalogue_for_energy_storage.xlsx, Note K.",:  Technical lifetime,2015.0
 home battery storage,investment,214.6816,EUR/kWh,"Global Energy System based on 100% Renewable Energy, Energywatchgroup/LTU University, 2019, Danish Energy Agency, technology_data_catalogue_for_energy_storage.xlsx",:  Energy storage expansion cost investment,2015.0
 home battery storage,lifetime,27.5,years,"Global Energy System based on 100% Renewable Energy, Energywatchgroup/LTU University, 2019, Danish Energy Agency, technology_data_catalogue_for_energy_storage.xlsx",:  Technical lifetime,2015.0
+hvdc-to-h2,fuel,137.0603,EUR/MWh,https://doi.org/10.1371/journal.pone.0281380,Cost per MWh delivered,2015.0
 hydro,FOM,1.0,%/year,DIW DataDoc http://hdl.handle.net/10419/80348, from old pypsa cost assumptions,2015.0
 hydro,efficiency,0.9,per unit,DIW DataDoc http://hdl.handle.net/10419/80348, from old pypsa cost assumptions,2015.0
 hydro,investment,2719.7328,EUR/kWel,DIW DataDoc http://hdl.handle.net/10419/80348, from old pypsa cost assumptions,2010.0
@@ -852,6 +853,9 @@ onwind,FOM,1.2017,%/year,"Danish Energy Agency, technology_data_for_el_and_dh.xl
 onwind,VOM,1.6397,EUR/MWh,"Danish Energy Agency, technology_data_for_el_and_dh.xlsx",20 Onshore turbines:  Variable O&M,2015.0
 onwind,investment,1273.4953,EUR/kW,"Danish Energy Agency, technology_data_for_el_and_dh.xlsx",20 Onshore turbines:  Nominal investment ,2015.0
 onwind,lifetime,30.0,years,"Danish Energy Agency, technology_data_for_el_and_dh.xlsx",20 Onshore turbines:  Technical lifetime,2015.0
+pipeline-ch4,fuel,145.6365,EUR/MWh,https://doi.org/10.1371/journal.pone.0281380,Cost per MWh delivered,2015.0
+pipeline-ch4-to-h2,fuel,226.6988,EUR/MWh,https://doi.org/10.1371/journal.pone.0281380,Cost per MWh delivered,2015.0
+pipeline-h2,fuel,94.9285,EUR/MWh,https://doi.org/10.1371/journal.pone.0281380,Cost per MWh delivered,2015.0
 ror,FOM,2.0,%/year,DIW DataDoc http://hdl.handle.net/10419/80348, from old pypsa cost assumptions,2015.0
 ror,efficiency,0.9,per unit,DIW DataDoc http://hdl.handle.net/10419/80348, from old pypsa cost assumptions,2015.0
 ror,investment,4079.5992,EUR/kWel,DIW DataDoc http://hdl.handle.net/10419/80348, from old pypsa cost assumptions,2010.0
@@ -863,6 +867,15 @@ seawater desalination,investment,37436.6928,EUR/(m^3-H2O/h),"Caldera et al 2017:
 seawater desalination,lifetime,30.0,years,"Caldera et al 2016: Local cost of seawater RO desalination based on solar PV and windenergy: A global estimate. (https://doi.org/10.1016/j.desal.2016.02.004), Table 1.",,
 shipping fuel methanol,CO2 intensity,0.2482,tCO2/MWh_th,-,Based on stochiometric composition.,2020.0
 shipping fuel methanol,fuel,86.082,EUR/MWh_th,"Based on (source 1) Hampp et al (2022), https://arxiv.org/abs/2107.01092, and (source 2): https://www.methanol.org/methanol-price-supply-demand/; both accessed: 2022-12-03.",400 EUR/t assuming range roughly in the long-term range for green methanol (source 1) and late 2020+beyond values for grey methanol (source 2).,2020.0
+shipping-ftfuel,fuel,214.0403,EUR/MWh,https://doi.org/10.1371/journal.pone.0281380,Cost per MWh delivered,2015.0
+shipping-lch4,fuel,118.2247,EUR/MWh,https://doi.org/10.1371/journal.pone.0281380,Cost per MWh delivered,2015.0
+shipping-lch4-to-h2,fuel,185.7925,EUR/MWh,https://doi.org/10.1371/journal.pone.0281380,Cost per MWh delivered,2015.0
+shipping-lh2,fuel,112.0423,EUR/MWh,https://doi.org/10.1371/journal.pone.0281380,Cost per MWh delivered,2015.0
+shipping-lnh3,fuel,110.3271,EUR/MWh,https://doi.org/10.1371/journal.pone.0281380,Cost per MWh delivered,2015.0
+shipping-lnh3-to-h2,fuel,182.7725,EUR/MWh,https://doi.org/10.1371/journal.pone.0281380,Cost per MWh delivered,2015.0
+shipping-lohc,fuel,111.2359,EUR/MWh,https://doi.org/10.1371/journal.pone.0281380,Cost per MWh delivered,2015.0
+shipping-meoh,fuel,151.9072,EUR/MWh,https://doi.org/10.1371/journal.pone.0281380,Cost per MWh delivered,2015.0
+shipping-meoh-to-h2,fuel,184.0807,EUR/MWh,https://doi.org/10.1371/journal.pone.0281380,Cost per MWh delivered,2015.0
 solar,FOM,1.9904,%/year,Calculated. See 'further description'.,Mixed investment costs based on average of 50% 'solar-rooftop' and 50% 'solar-utility',2020.0
 solar,VOM,0.0127,EUR/MWhel,RES costs made up to fix curtailment order, from old pypsa cost assumptions,2015.0
 solar,investment,593.996,EUR/kW_e,Calculated. See 'further description'.,Mixed investment costs based on average of 50% 'solar-rooftop' and 50% 'solar-utility',2020.0
