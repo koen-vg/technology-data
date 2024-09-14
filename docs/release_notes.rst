@@ -6,8 +6,43 @@ Release Notes
 .. ================
 
 
+Technology-Data 0.9.2 (30 August 2024)
+======================================
+
+* for central air-sourced heat pump use name plate efficiency
+
+* added preliminary Allam cycle gas turbine costs
+
+Technology-Data 0.9.1 (7 August 2024)
+=====================================
+
+* added fuel costs for bioethanol crops, rape seed, and manure from JRC ENSPRESO
+
+* added fuel costs for fuelwood from JRC ENSPRESO
+
+* added hull for HVDC underground cost based on HVDC submarine cost
+
+* added methanol-to-kerosene cost data from Concawe report
+
+Technology-Data 0.9.0 (12 May 2024)
+===================================
+* add methanol-to-kerosene cost data (https://github.com/PyPSA/technology-data/pull/136)
+
+* update electrolyser investment costs based on latest communications (https://github.com/PyPSA/technology-data/pull/129)
+
+* add heavy duty and shipping technology assumptions from DEA (https://github.com/PyPSA/technology-data/pull/128)
+
+* add data for Organic Rankine Cycles (ORC) and geothermal energy (https://github.com/PyPSA/technology-data/pull/111)
+
+* bugfix for retrieving optimistic and pessimistic value ranges from DEA (https://github.com/PyPSA/technology-data/pull/130)
+
+* update ``mock_snakemake()`` to work with snakemake v8 (https://github.com/PyPSA/technology-data/pull/127)
+
+* compatibility with newer pandas versions (https://github.com/PyPSA/technology-data/pull/126)
+
 Technology-Data 0.8.1 (28 February 2024)
 ========================================
+
 * adjust currency year in some DEA input data
 
 Technology-Data 0.8.0 (19 February 2024)
@@ -38,6 +73,12 @@ Technology-Data 0.7.0 (7 February 2024)
 * Add methanol-to-olefins/aromatics and steam cracker mostly from `DECHEMA report <https://dechema.de/dechema_media/Downloads/Positionspapiere/Technology_study_Low_carbon_energy_and_feedstock_for_the_European_chemical_industry.pdf>`_.
 
 * Added FOM for enhanced geothermal systems.
+
+* Added data for Organic Rankine Cycles.
+
+* Moved efficiency for electricity generation from geothermal to ORC.
+
+* Moved addition of geothermal data from `compile_cost_assumptions.py` to `manual_input.csv`.
 
 * Costs for 'fuel' provided in the manual_inputs.csv are now also adjusted for inflation.
 
